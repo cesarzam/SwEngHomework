@@ -15,14 +15,33 @@ namespace SwEngHomework.WebApp.Controllers
 
         public IActionResult Index()
         {
-            var viewModel = new IndexViewModel
-            {
-                CurrentDateTimeUtc = DateTime.UtcNow,
-                CurrentMinute = DateTime.UtcNow.Minute,
-                IsWithin30Seconds = false // Set to false initially
-            };
 
-            return View(viewModel);
+            DateTime giveMeTheTime = DateTime.Now;
+
+            ViewBag.TimeNow = giveMeTheTime.ToString("yyyy-MM-ddTHH:mm:ssZ");
+
+            //ViewBag.SecondsNow = giveMeTheTime.Second;
+            //ViewBag.Even = giveMeTheTime.Minute % 2;
+
+            if (giveMeTheTime.Second <= 30)
+            {
+                if (giveMeTheTime.Minute % 2 == 0)
+                {
+                    ViewBag.EvenLink = true;
+                }
+                else
+                {
+                    ViewBag.EvenLink = false;
+
+                }
+            }
+            else
+            {
+                ViewBag.EvenLink = false;
+            }
+
+            return View();
+
         }
 
         public IActionResult Privacy()

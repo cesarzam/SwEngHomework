@@ -8,14 +8,20 @@
     <hr /> 
     
     <div>
-        <h4> <i>DateTime goes here! @Model.CurrentDateTimeUtc.ToString("o")</i> </h4>
+        <h4> <i>DateTime goes here! @ViewBag.TimeNow</i> </h4>
+
     </div>
 
     <i>Link goes here when the minute is event.</i>
-    @if (Model.CurrentMinute % 2 == 0) //todo: implement Model.IsWithin30Seconds &&//
+
+@*   <p>current second @ViewBag.SecondsNow</p>
+    <p>even or not @ViewBag.Even</p> 
+*@
+    @if (ViewBag.EvenLink)
     {
-       <a href="/Other/EvenMinute" target="_blank">Even Minute</a>
+        <a href="/Other/EvenMinute" target="blank">Even Minute</a>
     }
+
 
     <hr />
     <div>

@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="SwEngHomework">
+      <HintPath>..\SwEngHomework\bin\Debug\net6.0\SwEngHomework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

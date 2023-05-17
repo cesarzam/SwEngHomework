@@ -1,7 +1,11 @@
+using SwEngHomework.Commissions;
+using SwEngHomework.DescriptiveStatistics;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IStatsCalculator, StatsCalculator>();
 
 var app = builder.Build();
 
