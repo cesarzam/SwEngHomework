@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IStatsCalculator, StatsCalculator>();
+builder.Services.AddScoped<ICommissionCalculator, CommissionCalculator>();
+
 
 var app = builder.Build();
 

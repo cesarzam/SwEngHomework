@@ -1,0 +1,21 @@
+﻿@model IDictionary<string, double>
+
+<h1>Commission Report</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Advisor</th>
+            <th>Commission</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Key</td>
+                <td>@item.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
